@@ -1,0 +1,24 @@
+#files {
+    border-radius: 50px;
+  }
+  
+  body {
+    background: linear-gradient(to left, #CEDB56, #008ACE);
+  }
+  
+  #button-select {
+     border-radius: 12px;
+     background: linear-gradient(90deg,rgba(54, 45, 156, 1) 0%, rgba(128, 87, 199, 1) 50%, rgba(237, 83, 83, 1) 100%);
+     margin : 0;
+  }
+  
+  #choose-files {
+    border-radius: 12px;
+    margin : 0;
+  }
+  
+  #file-list {
+     border-radius: 12px;
+     background: linear-gradient(90deg,rgba(54, 45, 156, 1) 0%, rgba(128, 87, 199, 1) 50%, rgba(237, 83, 83, 1) 100%);
+     margin : 0;
+  }
