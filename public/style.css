@@ -52,3 +52,58 @@
      background: linear-gradient(90deg,rgba(54, 45, 156, 1) 0%, rgba(128, 87, 199, 1) 50%, rgba(237, 83, 83, 1) 100%);
      margin : 0;
   }
+
+  #logo {
+    width: 200px;
+    height: 200px;
+    transform: scale(1);
+    transition: transform 1s ease;
+  }
+  
+  #logo:hover {
+    transform: scale(1.2); /* Zooms in to 120% */}
+
+    .product {
+      width: 240px;
+      background-color: #d4d4d4; /* light gray */
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-family: sans-serif;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center; /* or 'flex-start' if you want left alignment */
+      padding: 20px;
+    }
+    
+    /* Product card styling */
+    .product {
+      width: 240px;
+      background-color: #d4d4d4; /* light gray */
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-family: sans-serif;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* White top section (like a header or image holder) */
+    .product::before {
+      content: "";
+      display: block;
+      height: 96px;
+      background-color: white;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+    
+    /* Zoom effect on hover */
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
