@@ -1,20 +1,13 @@
-const input = document.getElementById('choose-files');
-const fileList = document.getElementById('file-list');
+const scrollContainer = document.querySelector('.product-container');
+const leftBtn = document.querySelector('.scroll-btn.left');
+const rightBtn = document.querySelector('.scroll-btn.right');
 
-input.addEventListener('change', () => {
-  fileList.innerHTML = ''; // Clear old list
-  const files = input.files;
+const scrollAmount = 300; // pixels
 
-  if (files.length === 0) {
-    const li = document.createElement('li');
-    li.textContent = 'No files selected.';
-    fileList.appendChild(li);
-    return;
-  }
+leftBtn.addEventListener('click', () => {
+  scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
 
-  for (const file of files) {
-    const li = document.createElement('li');
-    li.textContent = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
-    fileList.appendChild(li);
-  }
+rightBtn.addEventListener('click', () => {
+  scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 });
