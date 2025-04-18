@@ -63,47 +63,48 @@
   #logo:hover {
     transform: scale(1.2); /* Zooms in to 120% */}
 
-    .product {
-      width: 240px;
-      background-color: #d4d4d4; /* light gray */
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      font-family: sans-serif;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .product-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center; /* or 'flex-start' if you want left alignment */
-      padding: 20px;
-    }
-    
-    /* Product card styling */
-    .product {
-      width: 240px;
-      background-color: #d4d4d4; /* light gray */
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      font-family: sans-serif;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    /* White top section (like a header or image holder) */
-    .product::before {
-      content: "";
-      display: block;
-      height: 96px;
-      background-color: white;
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
-    }
-    
-    /* Zoom effect on hover */
-    .product:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
+    /* FLEX LAYOUT */
+ /* Product Container: Horizontal scrollable row */
+.product-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;            /* keeps all items in one row */
+  overflow-x: auto;             /* allows scrolling if too many products */
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Product Card */
+.product {
+  flex: 0 0 auto;               /* prevents items from shrinking or wrapping */
+  width: 240px;
+  background-color: #d4d4d4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image wrapper */
+.product-img {
+  background-color: white;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Product image */
+.product-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
