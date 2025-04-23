@@ -1,24 +1,108 @@
 #files {
-    border-radius: 50px;
-  }
-  
-  body {
-    background: linear-gradient(to left, #CEDB56, #008ACE);
-  }
-  
-  #button-select {
-     border-radius: 12px;
-     background: linear-gradient(90deg,rgba(54, 45, 156, 1) 0%, rgba(128, 87, 199, 1) 50%, rgba(237, 83, 83, 1) 100%);
-     margin : 0;
-  }
-  
-  #choose-files {
-    border-radius: 12px;
-    margin : 0;
-  }
-  
-  #file-list {
-     border-radius: 12px;
-     background: linear-gradient(90deg,rgba(54, 45, 156, 1) 0%, rgba(128, 87, 199, 1) 50%, rgba(237, 83, 83, 1) 100%);
-     margin : 0;
-  }
+  border-radius: 50px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #FFEBB7, #FFD1DC);
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #FFB347;
+  color: white;
+}
+
+main {
+  padding: 20px;
+}
+
+#products, #about {
+  margin-bottom: 20px;
+}
+
+.product {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #FFB347;
+  color: white;
+}
+
+#button-select,
+#choose-files,
+#file-list {
+  border-radius: 12px;
+  margin: 0;
+  background: linear-gradient(90deg, rgba(54, 45, 156, 1) 0%, rgba(128, 87, 199, 1) 50%, rgba(237, 83, 83, 1) 100%);
+}
+
+#logo {
+  width: 200px;
+  height: 200px;
+  transform: scale(1);
+  transition: transform 1s ease;
+}
+
+#logo:hover {
+  transform: scale(1.2);
+}
+
+/* Horizontal product layout */
+.product-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product card styling */
+.product {
+  flex: 0 0 auto;
+  width: 320px;
+  background-color: #d4d4d4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 10px;
+}
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+  background-color: white;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
